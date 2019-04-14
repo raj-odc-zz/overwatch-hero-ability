@@ -42,6 +42,7 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails', '~> 3.8'
   gem "factory_bot_rails"
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -59,3 +60,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'execjs'
 
 gem 'activeadmin'
+gem 'httparty'
