@@ -23,7 +23,6 @@ RSpec.describe Api::AbilitiesController do
     end
     it "JSON body response contains expected heros attributes" do
       json_response = JSON.parse(response.body)
-      puts json_response['ability']
       expect(json_response['ability']['id']).to eq(@ability.id)
     end
   end
