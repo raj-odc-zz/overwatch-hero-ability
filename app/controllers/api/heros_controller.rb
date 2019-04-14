@@ -1,16 +1,20 @@
 class Api::HerosController < ApplicationController
+	include ApiResponse
 	def index
-		heros = Hero.all
-		render json: {heros: heros}
+		per_page = params[:per_page] || 24
+		current_page = params[:page] || 1
+		heros = Hero.all.paginate(page: current_page, per_page: per_page)
+
+		render json: { data: heros, per_page: per_page, metadata: pagination_meta(heros) }
 	end
 
 	def show
 		hero = Hero.find(params[:id])
-		render json: {hero: hero}
+		render json: {data: hero}
 	end
 
 	def abilities
 		hero = Hero.find(params[:id])
-		render json: {abilities: hero.abilities}
+		render json: {data: hero.abilities.as_json}
 	end
 end

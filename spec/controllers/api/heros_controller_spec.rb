@@ -9,7 +9,7 @@ RSpec.describe Api::HerosController do
     end
     it "JSON body response contains expected heros attributes" do
       json_response = JSON.parse(response.body)
-      expect(json_response.keys).to match_array(['heros'])
+      expect(json_response.keys).to match_array(["data", "metadata", "per_page"])
     end
   end
 
@@ -23,7 +23,7 @@ RSpec.describe Api::HerosController do
     end
     it "JSON body response contains expected heros attributes" do
       json_response = JSON.parse(response.body)
-      expect(json_response['hero']['id']).to eq(@hero.id)
+      expect(json_response['data']['id']).to eq(@hero.id)
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe Api::HerosController do
     end
     it "JSON body response contains expected heros attributes" do
       json_response = JSON.parse(response.body)
-      expect(json_response['abilities'].first['id']).to eq(@ability.id)
+      expect(json_response['data'].first['id']).to eq(@ability.id)
     end
   end
 end

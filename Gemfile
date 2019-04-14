@@ -61,3 +61,4 @@ gem 'execjs'
 
 gem 'activeadmin'
 gem 'httparty'
+gem 'will_paginate'

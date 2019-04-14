@@ -3,7 +3,7 @@ class OverwatchService
 
 	BASE_URL = 'https://overwatch-api.net/api/v1/hero/'
 
-	def get_api_data(url = BASE_URL)
+	def replicate_data(url = BASE_URL)
 		response = HTTParty.get(url)
 		raise "API is not responding properly, please try again" unless response.code == 200
 		
