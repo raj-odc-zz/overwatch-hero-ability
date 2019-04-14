@@ -10,7 +10,8 @@ WORKDIR /overwatch-api-dojo
 COPY Gemfile Gemfile.lock ./ 
 RUN gem install bundler && bundle install --jobs 20 --retry 5
 
-RUN bundle exec rails db:create
-RUN bundle exec rails db:migrate
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
 RUN rm -f tmp/pids/server.pid
 ADD . /overwatch-api-dojo
