@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	root 'api/heros#index'
+  root 'api/heros#index'
 
   namespace :api, format: :json do
     resources :heros do

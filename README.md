@@ -1,24 +1,22 @@
-# README
+# API Call's
+  - /api/heros - hero list
+  - /api/heros/{hero_id} - hero data
+  - /api/heros/{hero_id}/abilities - hero ability list
+  - /api/abilities/ - ability list
+  - /api/abilities/{ability_id} - ability data
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Active admin
+  localhost:3000/admin
 
-Things you may want to cover:
+# Implementation
+  Created services for fetch Overwatch Heros & Abilities
+  Parsing fetched data and save it to Data Base
+  Test cases for the controller api and model validation
+  Docker created
+  Rubocop added for ruby style guide
 
-* Ruby version
+# Start the application
+  - run the command: **docker-compose up --build**
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Test the application
+  - run the command: **rspec**
