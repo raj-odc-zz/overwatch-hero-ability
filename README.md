@@ -20,3 +20,8 @@
 
 # Test the application
   - run the command: **rspec**
+
+# Pending
+  - Continuos deployment
+  - Heroku app and run
+  - Rubycritic for code quality check
